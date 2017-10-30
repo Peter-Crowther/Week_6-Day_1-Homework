@@ -22,7 +22,17 @@ public int stockCount(){
   return count;
 }
 
+public void add(Book book) {
+  if( isStockFull() ) {
+    return;
+  }
+  int stockCount = stockCount();
+  stock[stockCount] = book;
+}
 
+public boolean isStockFull() {
+  return stockCount() == stock.length;
+}
 
 
 
