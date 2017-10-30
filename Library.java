@@ -1,10 +1,12 @@
 class Library {
 private String name;
 private Book[] stock;
+private Member[] borrowed;
 
 public Library(String name ) {
   this.name = name;
   this.stock = new Book[6];
+  this.borrowed = new Member[1];
 
 }
 
@@ -32,6 +34,16 @@ public void add(Book book) {
 
 public boolean isStockFull() {
   return stockCount() == stock.length;
+}
+
+public int borrowedCount(){
+  int count = 0;
+  for ( Member member : borrowed ){
+    if (member != null){
+      count++;
+    }
+  }
+  return count;
 }
 
 

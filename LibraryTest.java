@@ -5,6 +5,7 @@ public class LibraryTest {
 
   Library library;
   Book book;
+  Member member;
 
   @Before
     public void before() {
@@ -36,6 +37,11 @@ public void stockIsFull(){
     library.add(book);
   }
   assertEquals(true, library.isStockFull());
+}
+
+@Test
+public void borrowedStartsAsEmpty() {
+  assertEquals(0, library.stockCount());
 }
 
 
